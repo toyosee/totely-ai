@@ -64,7 +64,8 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-400">
-          © {getCurrentDate()} Totely. All rights reserved.
+          © {getCurrentDate()} Totely. All rights reserved. <br />
+          {`By Barterverse Technologies Ltd.`}
         </div>
       </div>
     </footer>
