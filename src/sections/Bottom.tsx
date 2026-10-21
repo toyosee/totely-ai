@@ -66,8 +66,8 @@ const FAQS = [
   { q: 'What can I order?', a: 'Market foodstuff (garri, beans, rice, yam, pepper, oil and more), supermarket items, and meals from local restaurants. Ask in the chat if you are not sure; Totely will tell you what is available near you.' },
   { q: 'How do I pay?', a: 'From your Totely wallet, confirmed with your PIN. The wallet is an account with our partner bank that opens when you finish setup; fund it by bank transfer to its account number. If you prefer, Totely can also give you a one-time account to pay a single order by transfer.' },
   { q: 'How much does delivery cost?', a: 'It depends on your area and what you order. Item prices, the delivery fee and any service fee are all shown in the chat before you pay, so you always see the total first.' },
-  { q: 'What if an item costs more, or is finished?', a: 'Your shopper never pays more than the listed price without asking you. You either approve the difference (paid from your wallet) or remove the item. If something is finished, they suggest a replacement with a photo, and you decide. Anything not bought is refunded to your wallet.' },
-  { q: 'Something was wrong with my order. What now?', a: 'Open your order page from the chat and tap “Report a problem” within 24 hours of delivery. Add a photo if you can. Refunds go to your Totely wallet; a small processing fee applies, except when Totely or our shopper or rider got it wrong.' },
+  { q: 'What if an item costs more, or is finished?', a: 'You are never charged more than you approved. If an item is cheaper on the day, we refund the difference; small rises are covered by Totely; if it costs noticeably more, you either approve the difference (paid from your wallet) or remove the item. If something is finished, your shopper suggests a replacement with a photo, and you decide. Anything not bought is refunded to your wallet.' },
+  { q: 'Something was wrong with my order. What now?', a: 'Open your order page from the chat and tap “Report a problem” within 24 hours of delivery. Add a photo if you can. Refunds go to your Totely wallet; a small processing fee applies, except when Totely, our shopper or rider, or the vendor got it wrong. See our terms of service for details.' },
   { q: 'Is Totely safe?', a: 'Payments go through a licensed partner bank and need your PIN. Your PIN and BVN are only ever typed on a secure Totely page, never in the chat, and Totely does not store your BVN. Every delivery needs your code, and every step is photographed.' },
   { q: 'I lost my phone. How do I protect my account?', a: 'Reply FREEZE in the chat, or contact Totely from any other phone and we will freeze your account. Nothing can be paid from your wallet while it is frozen.' },
   { q: 'Which areas do you cover?', a: 'We are starting in Kaduna and opening area by area. Say hi to see the current list. If yours is not there, choose “My area isn’t listed” and we will tell you when we open there.' },
@@ -127,7 +127,7 @@ export function Footer() {
           <span className="inline-block rounded-xl bg-white px-3 py-2"><Logo /></span>
           <p className="mt-4 max-w-xs text-white/70">Your daily needs, totally covered. Markets, supermarkets and restaurants on WhatsApp.</p>
         </div>
-        <FooterCol title="Shop" links={[['How it works', '#how'], ['What you can order', '#order'], ['Safety', '#safety'], ['FAQ', '#faq']]} />
+        <FooterCol title="Shop" links={[['How it works', '/#how'], ['What you can order', '/#order'], ['Safety', '/#safety'], ['FAQ', '/#faq']]} />
         <FooterCol title="Earn with Totely" links={[['Sell on Totely', WA.vendor], ['Become a shopper', WA.agent], ['Become a rider', WA.rider]]} />
         <div>
           <h3 className="text-sm font-semibold text-white/60" style={{ fontFamily: 'var(--font-sans)', letterSpacing: 0 }}>Talk to us</h3>
@@ -138,7 +138,10 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <p className="wrap py-6 text-sm text-white/60">© {year} Totely, a product of Barterverse Technologies Ltd. WhatsApp is a trademark of Meta Platforms, Inc.; Totely is not affiliated with Meta.</p>
+        <div className="wrap flex flex-col gap-3 py-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
+          <p>© {year} Totely, a product of Barterverse Technologies Ltd. WhatsApp is a trademark of Meta Platforms, Inc.; Totely is not affiliated with Meta.</p>
+          <p className="flex shrink-0 gap-5"><a className="hover:text-white" href="/privacy/">Privacy policy</a><a className="hover:text-white" href="/terms/">Terms of service</a></p>
+        </div>
       </div>
     </footer>
   );

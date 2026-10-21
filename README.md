@@ -17,6 +17,8 @@ npm run build    # outputs dist/ (what Netlify publishes)
 - `src/lib.ts` — the WhatsApp number and the pre-filled messages for customers, vendors, shoppers and riders
 - `src/index.css` — brand colours and type (same palette as the ops console and worker app)
 - `public/og.png` — the preview image shown when the link is shared on WhatsApp, X, etc.
+- `privacy/` and `terms/` — the privacy policy and terms of service (`src/legal/`), served at `/privacy/` and `/terms/`.
+  Update the effective date in `src/legal/Layout.tsx` whenever either changes.
 
 ## Keeping it honest
 

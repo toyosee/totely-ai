@@ -70,3 +70,12 @@
   html { scroll-behavior: auto; }
   .bubble-in { animation: none; opacity: 1; }
 }
+
+/* Long-form legal text */
+.legal ul { list-style: disc; padding-left: 1.25rem; }
+.legal ul > li + li { margin-top: 0.5rem; }
+.legal a { color: var(--color-totely); text-decoration: underline; text-underline-offset: 2px; }
+.legal strong { color: var(--color-ink); font-weight: 600; }
+.legal table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.legal th, .legal td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--color-line); }
+.legal th { color: var(--color-ink); font-weight: 600; background: var(--color-paper); }

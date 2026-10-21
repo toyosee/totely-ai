@@ -5,11 +5,11 @@ import { PhoneChat } from '../art/Phone';
 import { WA } from '../lib';
 
 const NAV = [
-  { href: '#how', label: 'How it works' },
-  { href: '#order', label: 'What you can order' },
-  { href: '#safety', label: 'Safety' },
-  { href: '#earn', label: 'Earn with Totely' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/#how', label: 'How it works' },
+  { href: '/#order', label: 'What you can order' },
+  { href: '/#safety', label: 'Safety' },
+  { href: '/#earn', label: 'Earn with Totely' },
+  { href: '/#faq', label: 'FAQ' },
 ];
 
 export function Header() {
@@ -24,7 +24,7 @@ export function Header() {
   return (
     <header className={`sticky top-0 z-40 bg-white/90 backdrop-blur transition-shadow ${scrolled ? 'shadow-[0_1px_0_#E3E8F1]' : ''}`}>
       <div className="wrap flex h-16 items-center justify-between gap-4">
-        <a href="#top" aria-label="Totely home"><Logo /></a>
+        <a href="/" aria-label="Totely home"><Logo /></a>
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
           {NAV.map((n) => <a key={n.href} href={n.href} className="text-[15px] font-medium text-ink-soft hover:text-ink">{n.label}</a>)}
         </nav>
@@ -62,7 +62,7 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={WA.start} target="_blank" rel="noopener" className="btn-wa px-7 text-[17px]"><WaIcon />Say hi on WhatsApp</a>
-            <a href="#how" className="btn-ghost">See how it works</a>
+            <a href="/#how" className="btn-ghost">See how it works</a>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-ink-soft">
             {['No app to download', 'Pay with your PIN', 'Photos at every step'].map((t) => (

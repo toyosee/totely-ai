@@ -62,7 +62,7 @@ export function PhotoProof() {
           ))}
         </div>
         <div className="mt-14 grid gap-6 border-t border-white/10 pt-10 md:grid-cols-3">
-          <Promise title="Prices don't change without your OK">If an item costs more than listed, you choose: pay the difference from your wallet or drop it.</Promise>
+          <Promise title="Prices don't change without your OK">Cheaper on the day? We refund the difference. Noticeably dearer? You choose: pay the difference from your wallet or drop it.</Promise>
           <Promise title="Swaps ask you first">If something is finished, the shopper suggests a replacement with a photo. You say yes or no.</Promise>
           <Promise title="Something wrong? Tell us">Report a problem with photos within 24 hours of delivery. Refunds go straight to your wallet.</Promise>
         </div>
