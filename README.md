@@ -1,73 +1,25 @@
-# React + TypeScript + Vite
+# Totely landing page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The public website for Totely (Barterverse Technologies Ltd): shop Kaduna markets, supermarkets and restaurants on WhatsApp.
+React + Vite + Tailwind 4, deployed on Netlify from `main`.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # outputs dist/ (what Netlify publishes)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Where things are
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `src/sections/` — page sections in reading order: `Top` (header, hero, what you can order), `Middle` (how it works,
+  photo proof, features, safety, earn), `Bottom` (areas, FAQ, closing call to action, footer)
+- `src/art/` — all illustrations, hand-drawn as inline SVG in the brand palette (no image files to load)
+- `src/lib.ts` — the WhatsApp number and the pre-filled messages for customers, vendors, shoppers and riders
+- `src/index.css` — brand colours and type (same palette as the ops console and worker app)
+- `public/og.png` — the preview image shown when the link is shared on WhatsApp, X, etc.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Keeping it honest
+
+Copy describes what the product does today. Add numbers (customers, orders, partner stores) and testimonials only
+when they are real, and update the FAQ when fees, payment options or areas change. The map in "Where we deliver"
+names the first Kaduna areas; edit `KadunaMap` in `src/sections/Bottom.tsx` when that changes.

@@ -1,136 +1,72 @@
 @import "tailwindcss";
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/instrument-sans";
 
+/* Totely brand: the same palette as the ops console and worker app. Market-world accents on navy and paper. */
 @theme {
-  --color-primary: #2563EB;
-  --color-primary-dark: #1D4ED8;
-  --color-primary-light: #60A5FA;
-  --color-secondary: #7C3AED;
-  --color-accent: #F59E0B;
-  --color-dark: #0F172A;
-  --color-gray-soft: #F8FAFC;
+  --color-ink: #14213d;
+  --color-ink-soft: #3b4a6b;
+  --color-ink-mute: #6b7794;
+  --color-paper: #f5f7fb;
+  --color-line: #e3e8f1;
+  --color-totely: #2563eb;
+  --color-totely-dark: #1d4ed8;
+  --color-totely-tint: #e8effe;
+  --color-palm: #d99a00;
+  --color-palm-tint: #fdf3d9;
+  --color-palm-ink: #7a5600;
+  --color-leaf: #1e8e5a;
+  --color-leaf-tint: #e3f4eb;
+  --color-pepper: #c2412d;
+  --color-pepper-tint: #fbe7e3;
+  --color-chat: #e7ffdb;
+  --color-chat-bg: #efeae2;
+
+  --font-display: "Bricolage Grotesque Variable", "Instrument Sans Variable", system-ui, sans-serif;
+  --font-sans: "Instrument Sans Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
-
   body {
-    @apply bg-white text-dark antialiased;
+    @apply bg-white font-sans text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  :focus-visible {
+    outline: 3px solid var(--color-totely);
+    outline-offset: 3px;
+    border-radius: 6px;
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+@utility wrap { @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8; }
+@utility section { @apply py-20 sm:py-28; }
+@utility kicker { @apply text-base font-semibold text-totely; }
+@utility h2 { @apply mt-2 text-3xl font-bold leading-[1.1] sm:text-[2.75rem]; }
+@utility lede { @apply mt-4 max-w-2xl text-lg text-ink-soft; }
+@utility btn { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-semibold transition-colors; }
+@utility btn-wa { @apply btn bg-leaf text-white hover:bg-[#177448]; }
+@utility btn-ghost { @apply btn border border-line bg-white text-ink hover:border-ink-mute; }
+@utility num { font-variant-numeric: tabular-nums; }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
 }
+/* One orchestrated moment: the hero chat bubbles arrive in order. */
+.bubble-in { opacity: 0; animation: rise 0.5s ease-out forwards; }
 
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulse-glow {
-
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
-  }
-
-  50% {
-    box-shadow: 0 0 40px rgba(37, 99, 235, 0.4);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.animation-delay-100 {
-  animation-delay: 0.1s;
-}
-
-.animation-delay-200 {
-  animation-delay: 0.2s;
-}
-
-.animation-delay-300 {
-  animation-delay: 0.3s;
-}
-
-.animation-delay-400 {
-  animation-delay: 0.4s;
-}
-
-.animation-delay-500 {
-  animation-delay: 0.5s;
-}
-
-.animation-delay-600 {
-  animation-delay: 0.6s;
-}
-
-/* Gradient Text */
-.gradient-text-primary {
-  background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-secondary {
-  background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glassmorphism */
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #2563EB;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #1D4ED8;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .bubble-in { animation: none; opacity: 1; }
 }

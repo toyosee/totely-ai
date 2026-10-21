@@ -1,34 +1,25 @@
-import { Header } from './components/layout/Header';
-import { Footer } from './components/layout/Footer';
-import { Hero } from './components/sections/Hero';
-import { Features } from './components/sections/Features';
-import { HowItWorks } from './components/sections/HowItWorks';
-import { CTA } from './components/sections/CTA';
-import { FAQ } from './components/sections/FAQ';
-import { TrustBadges } from './components/ui/TrustBadges';
+import { Header, Hero, WhatYouCanOrder } from './sections/Top';
+import { Earn, Features, HowItWorks, PhotoProof, Safety } from './sections/Middle';
+import { Areas, FAQ, FinalCTA, Footer } from './sections/Bottom';
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2">Skip to content</a>
       <Header />
-
-      <main>
+      <main id="main">
         <Hero />
-
-        {/* Trust Badges */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-gray-100">
-          <TrustBadges />
-        </div>
-
-        <Features />
+        <WhatYouCanOrder />
         <HowItWorks />
-        <CTA />
+        <PhotoProof />
+        <Features />
+        <Safety />
+        <Earn />
+        <Areas />
         <FAQ />
+        <FinalCTA />
       </main>
-
       <Footer />
-    </div>
+    </>
   );
 }
-
-export default App;

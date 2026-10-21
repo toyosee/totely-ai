@@ -1,0 +1,158 @@
+import { useState } from 'react';
+import { Logo, WaIcon } from '../art/Brand';
+import { RiderArt } from '../art/Scenes';
+import { WA, WHATSAPP_NUMBER } from '../lib';
+
+export function Areas() {
+  return (
+    <section className="section bg-paper">
+      <div className="wrap grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <p className="kicker">Where we deliver</p>
+          <h2 className="h2">Starting in Kaduna, area by area</h2>
+          <p className="lede">When you say hi, Totely shows the areas we deliver to right now. New areas open as shoppers, riders and vendors join, and the ones customers ask for most open first.</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href={WA.start} target="_blank" rel="noopener" className="btn-wa"><WaIcon />Check my area</a>
+            <a href={WA.area} target="_blank" rel="noopener" className="btn-ghost">Ask for my area</a>
+          </div>
+          <p className="mt-4 text-[15px] text-ink-mute">Not covered yet? Choose “My area isn't listed” in the chat and we'll message you the day we open there.</p>
+        </div>
+        <KadunaMap />
+      </div>
+    </section>
+  );
+}
+
+/** Stylised map: delivery areas as districts along the river, more opening. Illustrative, not to scale. */
+function KadunaMap() {
+  const open = [
+    { x: 170, y: 96, label: 'Kawo' },
+    { x: 370, y: 140, label: 'Central Market' },
+    { x: 220, y: 236, label: 'Station Market' },
+  ];
+  const soon = [
+    { x: 80, y: 190, label: '' },
+    { x: 420, y: 270, label: '' },
+    { x: 330, y: 310, label: '' },
+    { x: 460, y: 70, label: '' },
+  ];
+  return (
+    <figure className="rounded-2xl bg-white p-4">
+      <svg viewBox="0 0 520 360" className="w-full" role="img" aria-label="Illustrated map of Kaduna with Totely delivery areas open around Kawo, Station Market and Central Market, and more areas planned.">
+        <rect width="520" height="360" rx="14" fill="#F5F7FB" />
+        <path d="M-10 290C90 250 140 300 220 250S360 170 420 200s90 10 110-20" fill="none" stroke="#BFD3FB" strokeWidth="18" strokeLinecap="round" />
+        <path d="M60 40l60 300M20 180h480M260 20v330M380 30l-90 310" stroke="#E3E8F1" strokeWidth="6" strokeLinecap="round" />
+        {soon.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r="34" fill="none" stroke="#6B7794" strokeWidth="2" strokeDasharray="5 6" />)}
+        {open.map((p) => (
+          <g key={p.label}>
+            <circle cx={p.x} cy={p.y} r="46" fill="#1E8E5A" opacity="0.14" />
+            <circle cx={p.x} cy={p.y} r="9" fill="#1E8E5A" />
+            <rect x={p.x - 62} y={p.y + 16} width="124" height="26" rx="13" fill="#fff" stroke="#E3E8F1" />
+            <text x={p.x} y={p.y + 34} textAnchor="middle" fontSize="14" fontWeight="600" fill="#14213D" fontFamily="Instrument Sans Variable, sans-serif">{p.label}</text>
+          </g>
+        ))}
+      </svg>
+      <figcaption className="mt-3 flex flex-wrap gap-5 px-2 text-sm text-ink-soft">
+        <span className="flex items-center gap-2"><span className="size-3 rounded-full bg-leaf" aria-hidden="true" />Delivering now</span>
+        <span className="flex items-center gap-2"><span className="size-3 rounded-full border-2 border-dashed border-ink-mute" aria-hidden="true" />Opening as we grow</span>
+        <span className="text-ink-mute">Illustration, not to scale</span>
+      </figcaption>
+    </figure>
+  );
+}
+
+const FAQS = [
+  { q: 'What is Totely?', a: 'Totely is a shopping assistant on WhatsApp, run by Barterverse Technologies Ltd in Kaduna. You send your list, a Totely shopper buys it from the market, supermarket or restaurant you choose, and a rider delivers it. You follow every step in the chat.' },
+  { q: 'What can I order?', a: 'Market foodstuff (garri, beans, rice, yam, pepper, oil and more), supermarket items, and meals from local restaurants. Ask in the chat if you are not sure; Totely will tell you what is available near you.' },
+  { q: 'How do I pay?', a: 'From your Totely wallet, confirmed with your PIN. The wallet is an account with our partner bank that opens when you finish setup; fund it by bank transfer to its account number. If you prefer, Totely can also give you a one-time account to pay a single order by transfer.' },
+  { q: 'How much does delivery cost?', a: 'It depends on your area and what you order. Item prices, the delivery fee and any service fee are all shown in the chat before you pay, so you always see the total first.' },
+  { q: 'What if an item costs more, or is finished?', a: 'Your shopper never pays more than the listed price without asking you. You either approve the difference (paid from your wallet) or remove the item. If something is finished, they suggest a replacement with a photo, and you decide. Anything not bought is refunded to your wallet.' },
+  { q: 'Something was wrong with my order. What now?', a: 'Open your order page from the chat and tap “Report a problem” within 24 hours of delivery. Add a photo if you can. Refunds go to your Totely wallet; a small processing fee applies, except when Totely or our shopper or rider got it wrong.' },
+  { q: 'Is Totely safe?', a: 'Payments go through a licensed partner bank and need your PIN. Your PIN and BVN are only ever typed on a secure Totely page, never in the chat, and Totely does not store your BVN. Every delivery needs your code, and every step is photographed.' },
+  { q: 'I lost my phone. How do I protect my account?', a: 'Reply FREEZE in the chat, or contact Totely from any other phone and we will freeze your account. Nothing can be paid from your wallet while it is frozen.' },
+  { q: 'Which areas do you cover?', a: 'We are starting in Kaduna and opening area by area. Say hi to see the current list. If yours is not there, choose “My area isn’t listed” and we will tell you when we open there.' },
+  { q: 'How do I become a vendor, shopper or rider?', a: 'Message Totely on WhatsApp and say which one. Shoppers and riders use the Totely worker app and are paid weekly into their Totely wallet; vendors are settled to their bank account.' },
+];
+
+export function FAQ() {
+  const [open, setOpen] = useState(0);
+  return (
+    <section id="faq" className="section">
+      <div className="wrap grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+        <div>
+          <p className="kicker">FAQ</p>
+          <h2 className="h2">Questions people ask</h2>
+          <p className="lede">Anything else? Type HELP in the chat and someone from Totely will answer.</p>
+        </div>
+        <div className="divide-y divide-line border-y border-line">
+          {FAQS.map((f, i) => (
+            <div key={f.q}>
+              <h3>
+                <button className="flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-semibold" aria-expanded={open === i} aria-controls={`faq-${i}`} onClick={() => setOpen(open === i ? -1 : i)} style={{ fontFamily: 'var(--font-sans)', letterSpacing: 0 }}>
+                  {f.q}
+                  <svg width="20" height="20" viewBox="0 0 20 20" className={`shrink-0 transition-transform ${open === i ? 'rotate-45' : ''}`} aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" /></svg>
+                </button>
+              </h3>
+              <div id={`faq-${i}`} hidden={open !== i} className="pb-6 pr-8 text-ink-soft">{f.a}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function FinalCTA() {
+  return (
+    <section className="relative overflow-hidden bg-totely">
+      <div className="wrap grid items-center gap-8 py-16 sm:py-20 lg:grid-cols-[1.4fr_1fr]">
+        <div className="text-white">
+          <h2 className="text-4xl font-extrabold leading-[1.05] sm:text-5xl">Your market run is one message away</h2>
+          <p className="mt-4 max-w-xl text-lg text-white/85">No download. No forms. Just say hi.</p>
+          <a href={WA.start} target="_blank" rel="noopener" className="btn mt-8 bg-white px-7 text-[17px] text-ink hover:bg-paper"><WaIcon />Say hi on WhatsApp</a>
+        </div>
+        <div className="mx-auto hidden w-full max-w-sm rounded-[2rem] bg-white/95 p-6 lg:block"><RiderArt className="w-full" /></div>
+      </div>
+    </section>
+  );
+}
+
+export function Footer() {
+  const year = new Date().getFullYear();
+  const phone = `+${WHATSAPP_NUMBER.slice(0, 3)} ${WHATSAPP_NUMBER.slice(3, 6)} ${WHATSAPP_NUMBER.slice(6, 9)} ${WHATSAPP_NUMBER.slice(9)}`;
+  return (
+    <footer className="bg-ink text-white">
+      <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="lg:col-span-1">
+          <span className="inline-block rounded-xl bg-white px-3 py-2"><Logo /></span>
+          <p className="mt-4 max-w-xs text-white/70">Your daily needs, totally covered. Markets, supermarkets and restaurants on WhatsApp.</p>
+        </div>
+        <FooterCol title="Shop" links={[['How it works', '#how'], ['What you can order', '#order'], ['Safety', '#safety'], ['FAQ', '#faq']]} />
+        <FooterCol title="Earn with Totely" links={[['Sell on Totely', WA.vendor], ['Become a shopper', WA.agent], ['Become a rider', WA.rider]]} />
+        <div>
+          <h3 className="text-sm font-semibold text-white/60" style={{ fontFamily: 'var(--font-sans)', letterSpacing: 0 }}>Talk to us</h3>
+          <ul className="mt-4 space-y-2.5">
+            <li><a className="text-white/85 hover:text-white" href={WA.start} target="_blank" rel="noopener">WhatsApp {phone}</a></li>
+            <li className="text-white/70">Kaduna, Nigeria</li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-white/10">
+        <p className="wrap py-6 text-sm text-white/60">© {year} Totely, a product of Barterverse Technologies Ltd. WhatsApp is a trademark of Meta Platforms, Inc.; Totely is not affiliated with Meta.</p>
+      </div>
+    </footer>
+  );
+}
+
+function FooterCol({ title, links }: { title: string; links: [string, string][] }) {
+  return (
+    <div>
+      <h3 className="text-sm font-semibold text-white/60" style={{ fontFamily: 'var(--font-sans)', letterSpacing: 0 }}>{title}</h3>
+      <ul className="mt-4 space-y-2.5">
+        {links.map(([label, href]) => (
+          <li key={label}><a className="text-white/85 hover:text-white" href={href} {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}>{label}</a></li>
+        ))}
+      </ul>
+    </div>
+  );
+}
