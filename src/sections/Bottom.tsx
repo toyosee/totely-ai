@@ -68,7 +68,7 @@ export function About() {
       <div className="wrap grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
           <p className="kicker">About Totely</p>
-          <h2 className="h2 max-w-2xl">Built in Kaduna, for the way Kaduna shops</h2>
+          <h2 className="h2 max-w-2xl">Developed in Kaduna, for the way Kaduna shops</h2>
           <p className="lede">
             Totely was built in Kaduna to make shopping from open markets, supermarkets and restaurants as easy as sending a
             WhatsApp message. A local shopper buys your items, checks quality and sends photos, and a rider brings them to your door.
@@ -78,22 +78,36 @@ export function About() {
             their own time. We open area by area so each one is done properly before the next.
           </p>
         </div>
-        <figure className="rounded-2xl border border-line p-6 sm:p-8" aria-label="Who is behind Totely">
-          <p className="text-2xl font-semibold leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
-            Your daily needs, totally covered.
-          </p>
-          <figcaption className="mt-6 flex items-center gap-4 border-t border-line pt-6">
-            <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-totely-tint font-bold text-totely" aria-hidden="true">EO</span>
-            <span>
-              <span className="block font-bold">Elijah Abolaji Oluwatoyosi</span>
-              <span className="block text-[15px] text-ink-mute">Founder, Totely</span>
+      <figure className="rounded-2xl border border-line p-6 sm:p-8" aria-label="Who is behind Totely">
+        <p className="text-2xl font-semibold leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+          Your daily needs, totally covered.
+        </p>
+        <figcaption className="mt-6 flex items-center gap-4 border-t border-line pt-6">
+          {/* Avatar Section */}
+          <div className="relative size-12 shrink-0">
+            {/* Fallback Initials */}
+            <span className="absolute inset-0 flex items-center justify-center rounded-full bg-totely-tint font-bold text-totely" aria-hidden="true">
+              EO
             </span>
-          </figcaption>
-          <p className="mt-6 text-[15px] text-ink-soft">
-            Totely is a product of Barterverse Technologies Limited, Kaduna, Nigeria.{' '}
-            <a className="font-semibold text-totely underline underline-offset-2" href="https://thebarterverse.com" target="_blank" rel="noopener">thebarterverse.com</a>
-          </p>
-        </figure>
+            {/* Sample Image Overlay */}
+            <img 
+              src="totely-founder.jpg" 
+              alt="Elijah Abolaji Oluwatoyosi" 
+              className="absolute inset-0 size-full rounded-full object-cover"
+              onError={(e) => e.currentTarget.style.display = 'none'}
+            />
+          </div>
+          <span>
+            <span className="block font-bold">Elijah Abolaji Oluwatoyosi</span>
+            <span className="block text-[15px] text-ink-mute">Founder, Totely</span>
+          </span>
+        </figcaption>
+        <p className="mt-6 text-[15px] text-ink-soft">
+          Totely is a product of Barterverse Technologies Limited, Kaduna, Nigeria.{' '}
+          <a className="font-semibold text-totely underline underline-offset-2" href="https://thebarterverse.com" target="_blank" rel="noopener">thebarterverse.com</a>
+        </p>
+      </figure>
+
       </div>
     </section>
   );
