@@ -6,7 +6,7 @@ const JOIN = [
   { title: 'Message us', text: 'Tap a button above, or just tell Totely on WhatsApp you want to be a vendor, shopper or rider.' },
   { title: 'We open your application', text: 'You get a reply in the chat straight away, and our team reviews your request.' },
   { title: 'Verification', text: 'We contact you with the requirements, usually a valid ID and a few documents, and where to send them.' },
-  { title: 'Start earning', text: 'Once approved, we set you up: shoppers and riders in the worker app, vendors with their store on Totely.' },
+  { title: 'Start earning', text: 'Once approved, we set you up and you gain access to the Totely app.' },
 ];
 
 export function JoinSteps() {
