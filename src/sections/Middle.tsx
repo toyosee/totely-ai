@@ -2,12 +2,13 @@ import type { ReactNode } from 'react';
 import { WaIcon } from '../art/Brand';
 import { ProofBasket, ProofDoor, ProofItem, ProofSealed, RiderArt, ShieldArt, ShopperArt, StallArt } from '../art/Scenes';
 import { WA } from '../lib';
+import { JoinSteps } from './Join';
 
 const STEPS = [
   { title: 'Say hi on WhatsApp', text: 'Set up takes about two minutes: your name, delivery area and address. Your PIN goes on a secure page, never in the chat, and your Totely wallet opens with our partner bank.' },
   { title: 'Send your list', text: 'Type it, send a voice note, or snap a handwritten list. Choose a market or store, and Totely prices every item with delivery and fees shown up front.' },
-  { title: 'Approve and pay', text: 'Tap to pay from your Totely wallet and confirm with your PIN. Fund the wallet any time by bank transfer to its account number.' },
-  { title: 'Watch it happen', text: 'Your shopper sends photos as they buy, checks any price change or swap with you first, and a rider delivers with a code only you have.' },
+  { title: 'Approve and pay', text: 'Tap to pay from your Totely wallet and confirm with your PIN, or pay by bank transfer to the account Totely gives you in the chat.' },
+  { title: 'Watch it happen', text: 'Your shopper sends photos as they buy, checks any price change or swap with you first, a rider delivers with a code only you have, and your receipt arrives in the chat.' },
 ];
 
 export function HowItWorks() {
@@ -48,7 +49,7 @@ export function PhotoProof() {
       <div className="wrap">
         <p className="text-base font-semibold text-palm">Nothing hidden</p>
         <h2 className="mt-2 max-w-3xl text-3xl font-bold leading-[1.1] sm:text-[2.75rem]">See every step of your order</h2>
-        <p className="mt-4 max-w-2xl text-lg text-white/75">The same photos are on your order page, so you always know what was bought, what it cost, and who handled it.</p>
+        <p className="mt-4 max-w-2xl text-lg text-white/75">The photos come straight to your WhatsApp chat, so you always know what was bought, what it cost, and who handled it. When it's delivered, your receipt follows in the same chat.</p>
         <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-6 lg:grid-cols-4">
           {PROOF.map(({ Art, title, text }, i) => (
             <figure key={title}>
@@ -84,9 +85,11 @@ const FEATURES = [
   { title: 'Voice notes and photos', text: 'Too busy to type? Send a voice note or a photo of a handwritten list. Totely turns it into a priced order.', icon: 'M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zm-7 9a7 7 0 0 0 14 0M12 19v3' },
   { title: 'Speaks your language', text: 'Chat in English, Pidgin or Hausa. Ask for “1 paint garri” or “tatashe” and Totely knows what you mean.', icon: 'M4 5h16v10H9l-5 4zM8 9h8M8 12h5' },
   { title: 'A wallet that does the paying', text: 'Your Totely wallet is held by our partner bank. Fund it by transfer, pay with your PIN, and receive refunds there.', icon: 'M3 7h18v12H3zM3 7l3-3h12l3 3M16 13h2' },
-  { title: 'Live order page', text: 'A link shows where your order is, the photos, and who is shopping and delivering it.', icon: 'M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' },
+  { title: 'Receipts in your chat', text: 'A PDF receipt with your name, every item and the total arrives in WhatsApp after delivery. Keep it, print it or forward it.', icon: 'M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h4' },
+  { title: 'Track only if you want to', text: 'Updates and photos come to the chat. Tap the tracking link if you want to see where your order is right now.', icon: 'M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' },
   { title: 'Clear fees, before you pay', text: 'Item prices, delivery and service fees are shown in the chat before you confirm. No surprises at the door.', icon: 'M7 3h10v18l-2.5-1.5L12 21l-2.5-1.5L7 21zM10 8h4M10 12h4' },
   { title: 'Real people when you need them', text: 'Type HELP any time to reach the Totely team in the same chat.', icon: 'M5 12a7 7 0 0 1 14 0v4a2 2 0 0 1-2 2h-1v-6h3M5 12v4a2 2 0 0 0 2 2h1v-6H5' },
+  { title: 'Offers only if you say yes', text: 'We ask once. Say yes to hear about deals, new stores and the day we open in your area, at most a couple of messages a week. Reply STOP anytime.', icon: 'M4 10v4h3l6 4V6L7 10zM17 9a4 4 0 0 1 0 6' },
 ];
 
 export function Features() {
@@ -121,6 +124,8 @@ const SAFETY = [
   { title: 'PIN and BVN never in chat', text: 'They are typed on a secure Totely page, so they never sit in your WhatsApp history. Totely never stores your BVN.' },
   { title: 'A code for every delivery', text: 'Only you have the code. The rider cannot complete delivery without it.' },
   { title: 'Every action recorded', text: 'Staff actions on your order and account are logged, with photos kept as proof.' },
+  { title: 'One account name, always', text: 'Paying by transfer? Only pay into the account named in your order message. Totely will never send you a different account in a separate message.' },
+  { title: 'Every partner verified', text: 'Vendors, shoppers and riders are reviewed and ID-checked by our team before they handle a single order.' },
 ];
 
 export function Safety() {
@@ -131,7 +136,7 @@ export function Safety() {
           <div>
             <p className="kicker">Safety</p>
             <h2 className="h2 max-w-2xl">Your money and your data, protected at each layer</h2>
-            <p className="lede">Payments run through a licensed partner bank. Totely never holds your money and never asks for your card, PIN or BVN in the chat.</p>
+            <p className="lede">Payments run through a licensed partner bank. Totely will never ask for your card details, PIN, BVN or bank password, in the chat, by phone or by email.</p>
             <dl className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
               {SAFETY.map((s) => (
                 <div key={s.title} className="border-l-2 border-totely pl-4">
@@ -156,7 +161,7 @@ export function Safety() {
 }
 
 const EARN = [
-  { Art: StallArt, title: 'Sell on Totely', who: 'Stores, market stalls and restaurants', points: ['New customers ordering on WhatsApp', 'Orders arrive priced and paid', 'Settled to your bank account'], cta: 'Become a vendor', href: WA.vendor },
+  { Art: StallArt, title: 'Sell on Totely', who: 'Stores, market stalls and restaurants', points: ['New customers ordering on WhatsApp', 'Orders arrive priced and paid, settled to your bank account', 'Promote your offers to customers in the areas you choose'], cta: 'Become a vendor', href: WA.vendor },
   { Art: ShopperArt, title: 'Shop for customers', who: 'Totely shoppers (agents)', points: ['Pick up shopping jobs in the Totely worker app', 'Fee for every order, paid weekly to your wallet', 'Work the markets you already know'], cta: 'Become a shopper', href: WA.agent },
   { Art: RiderArt, title: 'Deliver orders', who: 'Riders with a motorbike', points: ['Offers come to the nearest rider first', 'Paid weekly into your Totely wallet', 'Shop and deliver the same order to earn both fees'], cta: 'Become a rider', href: WA.rider },
 ];
@@ -167,7 +172,7 @@ export function Earn() {
       <div className="wrap">
         <p className="kicker">Earn with Totely</p>
         <h2 className="h2 max-w-3xl">Grow your business, or earn on your own time</h2>
-        <p className="lede">Totely runs on local people: the sellers customers already trust, and shoppers and riders who know the city. One person can shop and ride.</p>
+        <p className="lede">Totely runs on local people: the sellers customers already trust, and shoppers and riders who know the city. One person can shop and ride. Send us a message and we'll open your application.</p>
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {EARN.map(({ Art, title, who, points, cta, href }) => (
             <article key={title} className="flex flex-col rounded-2xl border border-line p-6">
@@ -183,6 +188,7 @@ export function Earn() {
             </article>
           ))}
         </div>
+        <JoinSteps />
       </div>
     </section>
   );

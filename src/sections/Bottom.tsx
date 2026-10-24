@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Logo, WaIcon } from '../art/Brand';
 import { RiderArt } from '../art/Scenes';
-import { WA, WHATSAPP_NUMBER } from '../lib';
+import { SUPPORT_EMAIL, WA, WHATSAPP_NUMBER } from '../lib';
 
 export function Areas() {
   return (
-    <section className="section bg-paper">
+    <section id="areas" className="section bg-paper">
       <div className="wrap grid items-center gap-10 lg:grid-cols-2">
         <div>
           <p className="kicker">Where we deliver</p>
@@ -61,17 +61,58 @@ function KadunaMap() {
   );
 }
 
+/** Who is behind Totely. Matches what the assistant tells customers who ask (Settings → About Totely). */
+export function About() {
+  return (
+    <section id="about" className="section">
+      <div className="wrap grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <div>
+          <p className="kicker">About Totely</p>
+          <h2 className="h2 max-w-2xl">Built in Kaduna, for the way Kaduna shops</h2>
+          <p className="lede">
+            Totely was built in Kaduna to make shopping from open markets, supermarkets and restaurants as easy as sending a
+            WhatsApp message. A local shopper buys your items, checks quality and sends photos, and a rider brings them to your door.
+          </p>
+          <p className="mt-4 max-w-2xl text-lg text-ink-soft">
+            Every order also means work for people in the city: vendors reach new customers, and shoppers and riders earn on
+            their own time. We open area by area so each one is done properly before the next.
+          </p>
+        </div>
+        <figure className="rounded-2xl border border-line p-6 sm:p-8" aria-label="Who is behind Totely">
+          <p className="text-2xl font-semibold leading-snug" style={{ fontFamily: 'var(--font-display)' }}>
+            Your daily needs, totally covered.
+          </p>
+          <figcaption className="mt-6 flex items-center gap-4 border-t border-line pt-6">
+            <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-totely-tint font-bold text-totely" aria-hidden="true">EO</span>
+            <span>
+              <span className="block font-bold">Elijah Abolaji Oluwatoyosi</span>
+              <span className="block text-[15px] text-ink-mute">Founder, Totely</span>
+            </span>
+          </figcaption>
+          <p className="mt-6 text-[15px] text-ink-soft">
+            Totely is a product of Barterverse Technologies Limited, Kaduna, Nigeria.{' '}
+            <a className="font-semibold text-totely underline underline-offset-2" href="https://thebarterverse.com" target="_blank" rel="noopener">thebarterverse.com</a>
+          </p>
+        </figure>
+      </div>
+    </section>
+  );
+}
+
 const FAQS = [
   { q: 'What is Totely?', a: 'Totely is a shopping assistant on WhatsApp, run by Barterverse Technologies Ltd in Kaduna. You send your list, a Totely shopper buys it from the market, supermarket or restaurant you choose, and a rider delivers it. You follow every step in the chat.' },
   { q: 'What can I order?', a: 'Market foodstuff (garri, beans, rice, yam, pepper, oil and more), supermarket items, and meals from local restaurants. Ask in the chat if you are not sure; Totely will tell you what is available near you.' },
-  { q: 'How do I pay?', a: 'From your Totely wallet, confirmed with your PIN. The wallet is an account with our partner bank that opens when you finish setup; fund it by bank transfer to its account number. If you prefer, Totely can also give you a one-time account to pay a single order by transfer.' },
+  { q: 'How do I pay?', a: 'From your Totely wallet, confirmed with your PIN. The wallet is an account with our partner bank that opens when you finish setup; fund it by bank transfer to its account number. You can also pay a single order by bank transfer: Totely sends the account details for that order in the chat. Only ever pay into the account named in that message.' },
+  { q: 'Do I get a receipt?', a: 'Yes. When your order is delivered, a PDF receipt with your name, phone number, every item, the fees and the total is sent to your WhatsApp chat. Keep it, print it or forward it. Type RECEIPT in the chat any time to get it again.' },
   { q: 'How much does delivery cost?', a: 'It depends on your area and what you order. Item prices, the delivery fee and any service fee are all shown in the chat before you pay, so you always see the total first.' },
   { q: 'What if an item costs more, or is finished?', a: 'You are never charged more than you approved. If an item is cheaper on the day, we refund the difference; small rises are covered by Totely; if it costs noticeably more, you either approve the difference (paid from your wallet) or remove the item. If something is finished, your shopper suggests a replacement with a photo, and you decide. Anything not bought is refunded to your wallet.' },
   { q: 'Something was wrong with my order. What now?', a: 'Open your order page from the chat and tap “Report a problem” within 24 hours of delivery. Add a photo if you can. Refunds go to your Totely wallet; a small processing fee applies, except when Totely, our shopper or rider, or the vendor got it wrong. See our terms of service for details.' },
   { q: 'Is Totely safe?', a: 'Payments go through a licensed partner bank and need your PIN. Your PIN and BVN are only ever typed on a secure Totely page, never in the chat, and Totely does not store your BVN. Every delivery needs your code, and every step is photographed.' },
   { q: 'I lost my phone. How do I protect my account?', a: 'Reply FREEZE in the chat, or contact Totely from any other phone and we will freeze your account. Nothing can be paid from your wallet while it is frozen.' },
   { q: 'Which areas do you cover?', a: 'We are starting in Kaduna and opening area by area. Say hi to see the current list. If yours is not there, choose “My area isn’t listed” and we will tell you when we open there.' },
-  { q: 'How do I become a vendor, shopper or rider?', a: 'Message Totely on WhatsApp and say which one. Shoppers and riders use the Totely worker app and are paid weekly into their Totely wallet; vendors are settled to their bank account.' },
+  { q: 'Will Totely send me adverts?', a: 'Only if you say yes. We ask once; if you agree, you get deals, new stores and restaurants, and news when we open in your area, at most a couple of messages a week. Reply STOP anytime to stop them.' },
+  { q: 'How do I become a vendor, shopper or rider?', a: 'Message Totely on WhatsApp and say which one, for example “I want to be a rider”. That opens an application with our team, and we contact you with the requirements for verification, usually a valid ID and a few documents, and where to send them. If something is missing, send it later and we reopen your application. Once approved, shoppers and riders use the Totely worker app and are paid weekly into their Totely wallet; vendors are settled to their bank account.' },
+  { q: 'Can my business advertise on Totely?', a: 'Yes. Vendors on Totely can promote offers to customers in the areas they choose. Only customers who agreed to receive offers get them, and sponsored messages are clearly labelled. Message us on WhatsApp to ask about it.' },
 ];
 
 export function FAQ() {
@@ -127,12 +168,13 @@ export function Footer() {
           <span className="inline-block rounded-xl bg-white px-3 py-2"><Logo /></span>
           <p className="mt-4 max-w-xs text-white/70">Your daily needs, totally covered. Markets, supermarkets and restaurants on WhatsApp.</p>
         </div>
-        <FooterCol title="Shop" links={[['How it works', '/#how'], ['What you can order', '/#order'], ['Safety', '/#safety'], ['FAQ', '/#faq']]} />
-        <FooterCol title="Earn with Totely" links={[['Sell on Totely', WA.vendor], ['Become a shopper', WA.agent], ['Become a rider', WA.rider]]} />
+        <FooterCol title="Shop" links={[['How it works', '/#how'], ['What you can order', '/#order'], ['Where we deliver', '/#areas'], ['Safety', '/#safety'], ['About Totely', '/#about'], ['FAQ', '/#faq']]} />
+        <FooterCol title="Earn with Totely" links={[['Sell on Totely', WA.vendor], ['Become a shopper', WA.agent], ['Become a rider', WA.rider], ['Advertise your store', WA.advertise]]} />
         <div>
           <h3 className="text-sm font-semibold text-white/60" style={{ fontFamily: 'var(--font-sans)', letterSpacing: 0 }}>Talk to us</h3>
           <ul className="mt-4 space-y-2.5">
             <li><a className="text-white/85 hover:text-white" href={WA.start} target="_blank" rel="noopener">WhatsApp {phone}</a></li>
+            {SUPPORT_EMAIL && <li><a className="text-white/85 hover:text-white" href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a></li>}
             <li className="text-white/70">Kaduna, Nigeria</li>
           </ul>
         </div>
