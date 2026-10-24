@@ -1,6 +1,6 @@
 import { Header, Hero, WhatYouCanOrder } from './sections/Top';
 import { Earn, Features, HowItWorks, PhotoProof, Safety } from './sections/Middle';
-import { Areas, FAQ, FinalCTA, Footer } from './sections/Bottom';
+import { About, Areas, FAQ, FinalCTA, Footer } from './sections/Bottom';
 
 export default function App() {
   return (
@@ -16,6 +16,7 @@ export default function App() {
         <Safety />
         <Earn />
         <Areas />
+        <About />
         <FAQ />
         <FinalCTA />
       </main>

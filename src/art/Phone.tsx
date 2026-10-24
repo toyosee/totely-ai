@@ -19,7 +19,7 @@ function Btn({ children }: { children: ReactNode }) {
 /** Example Totely conversation in a phone: list in, priced basket, photo proof, delivered. */
 export function PhoneChat() {
   return (
-    <div className="relative mx-auto w-[300px] sm:w-[320px]" role="img" aria-label="Example WhatsApp chat: a customer sends a market list, Totely replies with prices, the agent sends a basket photo, and the order is delivered.">
+    <div className="relative mx-auto w-[300px] sm:w-[320px]" role="img" aria-label="Example WhatsApp chat: a customer sends a market list, Totely replies with prices, the agent sends a basket photo, the order is delivered and a PDF receipt arrives in the chat.">
       <div className="rounded-[2.6rem] bg-ink p-2.5 shadow-[0_30px_60px_-20px_rgba(20,33,61,0.45)]">
         <div className="overflow-hidden rounded-[2.1rem] bg-chat-bg">
           {/* chat header */}
@@ -52,6 +52,16 @@ export function PhoneChat() {
             </Bubble>
             <Bubble delay={1650} time="10:52">
               <span className="font-semibold text-leaf">Delivered</span> Your code was <span className="num font-semibold">6204</span>. Rate your order?
+            </Bubble>
+            <Bubble delay={2150} time="10:52">
+              <span className="flex items-center gap-2.5 rounded-lg bg-[#f5f6f6] p-2">
+                <span className="flex h-9 w-7 shrink-0 items-end justify-center rounded-[4px] bg-pepper pb-1 text-[8px] font-bold text-white">PDF</span>
+                <span className="min-w-0 leading-tight">
+                  <span className="block truncate font-semibold">Receipt TOT-7K3Q.pdf</span>
+                  <span className="block text-[11px] text-[#667781]">1 page · PDF</span>
+                </span>
+              </span>
+              <span className="mt-1.5 block">🧾 Your receipt. Thank you for shopping with Totely.</span>
             </Bubble>
           </div>
         </div>

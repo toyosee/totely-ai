@@ -43,7 +43,9 @@ const sections: LegalSection[] = [
         <li>Market prices change during the day. If an item turns out <strong>cheaper</strong>, we refund the difference to your wallet. A <strong>small</strong> rise is covered by Totely. A <strong>noticeable</strong> rise needs your OK: you pay the difference from your wallet, or the item is removed and refunded.</li>
         <li>If an item is not available, your shopper may suggest a replacement with a photo, which you can accept or decline. Items that are not bought are refunded.</li>
         <li>If you do not reply to a price or replacement question within the time shown in the chat, the shopper makes a reasonable choice so your order is not held up, and you can still report a problem afterwards.</li>
-        <li>You pay from your Totely wallet with your PIN. Where offered, you may instead pay a single order by bank transfer to a one-time account number; an unpaid order expires after the time shown.</li>
+        <li>You pay from your Totely wallet with your PIN. Where offered, you may instead pay a single order by bank transfer to the account given in the chat for that order, using your order number as the narration; an unpaid order expires after the time shown. A transfer to Totely's own account is confirmed once our team sees it in the bank. Only pay into the account named in your order message: Totely will never send you a different account in a separate message, and is not responsible for money sent to any other account.</li>
+        <li>Any tax that applies is shown in the total before you pay.</li>
+        <li>When your order is delivered we send a receipt to your WhatsApp chat. Receipts cannot be changed once issued; if something on it is wrong, contact us and we will put it right.</li>
       </ul>
     ),
   },
@@ -63,7 +65,7 @@ const sections: LegalSection[] = [
     title: 'Delivery',
     body: (
       <ul>
-        <li>Your shopper sends photos as items are bought and of the full basket, and the bag is sealed before collection. You can follow your order on your order page.</li>
+        <li>Your shopper sends photos as items are bought and of the full basket, and the bag is sealed before collection. These photos come to your WhatsApp chat, and you can also follow your order on the tracking page.</li>
         <li>When the rider arrives, give your <strong>delivery code</strong> only after you have your items. Giving the code confirms you received the order.</li>
         <li>Please be reachable on your phone. If the rider cannot reach you or the address is wrong, we will contact you to arrange another attempt or a return; extra delivery costs may apply.</li>
         <li>Delivery times shown are estimates and can be affected by traffic, weather or market conditions.</li>
@@ -83,6 +85,17 @@ const sections: LegalSection[] = [
         </ul>
         <p>Nothing in these terms limits rights you have under Nigerian consumer protection law, including the Federal Competition and Consumer Protection Act.</p>
       </>
+    ),
+  },
+  {
+    id: 'messages',
+    title: 'Messages from Totely',
+    body: (
+      <ul>
+        <li>We message you on WhatsApp about your account and orders, including photos, payment requests, receipts and delivery updates.</li>
+        <li>Offers, new stores and news about areas we are opening are sent only if you agree, at most a couple of messages a week. Reply <strong>STOP</strong> at any time to stop them; order messages continue.</li>
+        <li>Some offers are paid promotions from vendors on Totely. These are labelled as sponsored. Prices and terms in an offer are set by the vendor and apply when you order.</li>
+      </ul>
     ),
   },
   {

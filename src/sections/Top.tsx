@@ -9,6 +9,8 @@ const NAV = [
   { href: '/#order', label: 'What you can order' },
   { href: '/#safety', label: 'Safety' },
   { href: '/#earn', label: 'Earn with Totely' },
+  { href: '/#areas', label: 'Areas' },
+  { href: '/#about', label: 'About' },
   { href: '/#faq', label: 'FAQ' },
 ];
 
@@ -25,18 +27,18 @@ export function Header() {
     <header className={`sticky top-0 z-40 bg-white/90 backdrop-blur transition-shadow ${scrolled ? 'shadow-[0_1px_0_#E3E8F1]' : ''}`}>
       <div className="wrap flex h-16 items-center justify-between gap-4">
         <a href="/" aria-label="Totely home"><Logo /></a>
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
-          {NAV.map((n) => <a key={n.href} href={n.href} className="text-[15px] font-medium text-ink-soft hover:text-ink">{n.label}</a>)}
+        <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
+          {NAV.map((n) => <a key={n.href} href={n.href} className="whitespace-nowrap text-[15px] font-medium text-ink-soft hover:text-ink">{n.label}</a>)}
         </nav>
         <div className="flex items-center gap-2">
-          <a href={WA.start} target="_blank" rel="noopener" className="btn-wa hidden min-h-10 px-5 text-[15px] sm:inline-flex"><WaIcon size={18} />Say hi on WhatsApp</a>
-          <button className="rounded-lg p-2 text-ink lg:hidden" aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>
+          <a href={WA.start} target="_blank" rel="noopener" className="btn-wa hidden min-h-10 whitespace-nowrap px-5 text-[15px] sm:inline-flex"><WaIcon size={18} />Say hi on WhatsApp</a>
+          <button className="rounded-lg p-2 text-ink xl:hidden" aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>
             <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d={open ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16'} stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
           </button>
         </div>
       </div>
       {open && (
-        <nav id="mobile-nav" className="wrap flex flex-col gap-1 pb-4 lg:hidden" aria-label="Main">
+        <nav id="mobile-nav" className="wrap flex flex-col gap-1 pb-4 xl:hidden" aria-label="Main">
           {NAV.map((n) => <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="rounded-lg px-2 py-2.5 font-medium text-ink-soft hover:bg-paper">{n.label}</a>)}
           <a href={WA.start} target="_blank" rel="noopener" className="btn-wa mt-2"><WaIcon />Say hi on WhatsApp</a>
         </nav>
