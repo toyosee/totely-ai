@@ -20,7 +20,7 @@ export const PHONE = `+${WHATSAPP_NUMBER.slice(0, 3)} ${WHATSAPP_NUMBER.slice(3,
 export function Contact() {
   return (
     <>
-      WhatsApp <a href={WA.start} target="_blank" rel="noopener">{PHONE}</a> (type HELP to reach a person), {COMPANY}, Kaduna, Nigeria.
+      WhatsApp <a href={WA.start} target="_blank" rel="noopener">{PHONE}</a> (type HELP to reach a person), {COMPANY}, Abuja, Nigeria.
     </>
   );
 }
@@ -34,7 +34,7 @@ function LegalPage({ title, intro, sections, other }: { title: string; intro: Re
           <div className="wrap py-14 sm:py-20">
             <p className="kicker">Legal</p>
             <h1 className="mt-2 text-4xl font-extrabold leading-[1.05] sm:text-5xl">{title}</h1>
-            <p className="mt-4 text-ink-soft">Effective {EFFECTIVE}. {COMPANY}, Kaduna, Nigeria.</p>
+            <p className="mt-4 text-ink-soft">Effective {EFFECTIVE}. {COMPANY}, Abuja, Nigeria.</p>
           </div>
         </div>
         <div className="wrap grid gap-12 py-14 lg:grid-cols-[230px_1fr] lg:gap-16">

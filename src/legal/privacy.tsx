@@ -6,7 +6,7 @@ const sections: LegalSection[] = [
     title: 'Who we are',
     body: (
       <>
-        <p>Totely is a shopping and delivery service on WhatsApp, operated by <strong>{COMPANY}</strong> (“Totely”, “we”, “us”), Kaduna, Nigeria. We are the data controller for the personal data described in this policy.</p>
+        <p>Totely is a shopping and delivery service on WhatsApp, operated by <strong>{COMPANY}</strong> (“Totely”, “we”, “us”), Abuja, Nigeria. We are the data controller for the personal data described in this policy.</p>
         <p>This policy explains what we collect when you use Totely on WhatsApp, our secure web pages, the Totely worker app or this website, why we collect it, who we share it with, and the rights you have under the <strong>Nigeria Data Protection Act 2023</strong> (NDPA).</p>
       </>
     ),
