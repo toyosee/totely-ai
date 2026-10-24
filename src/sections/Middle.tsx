@@ -97,7 +97,7 @@ export function Features() {
     <section className="section">
       <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <p className="kicker">Built for how Kaduna shops</p>
+          <p className="kicker">Built for everyday shopping experience</p>
           <h2 className="h2">Everything happens inside WhatsApp</h2>
           <p className="lede">No new app, no forms, no data-hungry downloads. If you can send a message, you can shop with Totely.</p>
         </div>
@@ -121,7 +121,7 @@ export function Features() {
 
 const SAFETY = [
   { title: 'Your PIN for every payment', text: 'Nothing leaves your wallet until you confirm it with your 4-digit PIN.' },
-  { title: 'PIN and BVN never in chat', text: 'They are typed on a secure Totely page, so they never sit in your WhatsApp history. Totely never stores your BVN.' },
+  { title: 'PIN and BVN never in chat', text: 'They are typed securedly, so they never sit in your WhatsApp history. Totely never stores your BVN.' },
   { title: 'A code for every delivery', text: 'Only you have the code. The rider cannot complete delivery without it.' },
   { title: 'Every action recorded', text: 'Staff actions on your order and account are logged, with photos kept as proof.' },
   { title: 'One account name, always', text: 'Paying by transfer? Only pay into the account named in your order message. Totely will never send you a different account in a separate message.' },
@@ -163,7 +163,7 @@ export function Safety() {
 const EARN = [
   { Art: StallArt, title: 'Sell on Totely', who: 'Stores, market stalls and restaurants', points: ['New customers ordering on WhatsApp', 'Orders arrive priced and paid, settled to your bank account', 'Promote your offers to customers in the areas you choose'], cta: 'Become a vendor', href: WA.vendor },
   { Art: ShopperArt, title: 'Shop for customers', who: 'Totely shoppers (agents)', points: ['Pick up shopping jobs in the Totely worker app', 'Fee for every order, paid weekly to your wallet', 'Work the markets you already know'], cta: 'Become a shopper', href: WA.agent },
-  { Art: RiderArt, title: 'Deliver orders', who: 'Riders with a motorbike', points: ['Offers come to the nearest rider first', 'Paid weekly into your Totely wallet', 'Shop and deliver the same order to earn both fees'], cta: 'Become a rider', href: WA.rider },
+  { Art: RiderArt, title: 'Deliver orders', who: 'Totely riders', points: ['Offers come to the nearest rider first', 'Paid weekly into your Totely wallet', 'Shop and deliver the same order to earn both fees'], cta: 'Become a rider', href: WA.rider },
 ];
 
 export function Earn() {

@@ -14,6 +14,8 @@ const NAV = [
   { href: '/#faq', label: 'FAQ' },
 ];
 
+const facts = ['No app to download', 'Pay with your PIN', 'Photos at every step'];
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -53,7 +55,7 @@ export function Hero() {
       <div className="wrap grid items-center gap-12 pb-16 pt-10 lg:grid-cols-[1.25fr_1fr] lg:gap-6 lg:pb-24 lg:pt-16">
         <div>
           <p className="inline-flex items-center gap-2 rounded-full bg-palm-tint px-3 py-1 text-sm font-semibold text-palm-ink">
-            <span className="size-2 rounded-full bg-palm" aria-hidden="true" />Now starting in Kaduna
+            <span className="size-2 rounded-full bg-palm" aria-hidden="true" />Your Daily Needs Totally Covered
           </p>
           <h1 className="mt-5 text-[2.6rem] font-extrabold leading-[1.02] sm:text-[3.5rem] xl:text-[3.9rem]">
             Send the list.<br /><span className="lg:whitespace-nowrap">We'll do the market.</span>
@@ -67,7 +69,7 @@ export function Hero() {
             <a href="/#how" className="btn-ghost">See how it works</a>
           </div>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-ink-soft">
-            {['No app to download', 'Pay with your PIN', 'Photos at every step'].map((t) => (
+            {facts.map((t) => (
               <li key={t} className="flex items-center gap-2">
                 <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#E3F4EB" /><path d="M6 10.5l2.6 2.5L14 7.5" fill="none" stroke="#1E8E5A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 {t}

@@ -8,7 +8,7 @@ export function Areas() {
     <section id="areas" className="section bg-paper">
       <div className="wrap grid items-center gap-10 lg:grid-cols-2">
         <div>
-          <p className="kicker">Where we deliver</p>
+          <p className="kicker">Where we currently deliver</p>
           <h2 className="h2">Starting in Kaduna, area by area</h2>
           <p className="lede">When you say hi, Totely shows the areas we deliver to right now. New areas open as shoppers, riders and vendors join, and the ones customers ask for most open first.</p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -26,9 +26,9 @@ export function Areas() {
 /** Stylised map: delivery areas as districts along the river, more opening. Illustrative, not to scale. */
 function KadunaMap() {
   const open = [
-    { x: 170, y: 96, label: 'Kawo' },
+    { x: 170, y: 96, label: 'Barnawa' },
     { x: 370, y: 140, label: 'Central Market' },
-    { x: 220, y: 236, label: 'Station Market' },
+    { x: 220, y: 236, label: 'Ungwan Rimi' },
   ];
   const soon = [
     { x: 80, y: 190, label: '' },
@@ -55,7 +55,7 @@ function KadunaMap() {
       <figcaption className="mt-3 flex flex-wrap gap-5 px-2 text-sm text-ink-soft">
         <span className="flex items-center gap-2"><span className="size-3 rounded-full bg-leaf" aria-hidden="true" />Delivering now</span>
         <span className="flex items-center gap-2"><span className="size-3 rounded-full border-2 border-dashed border-ink-mute" aria-hidden="true" />Opening as we grow</span>
-        <span className="text-ink-mute">Illustration, not to scale</span>
+        <span className="text-ink-mute">We are in your area</span>
       </figcaption>
     </figure>
   );
@@ -68,7 +68,7 @@ export function About() {
       <div className="wrap grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div>
           <p className="kicker">About Totely</p>
-          <h2 className="h2 max-w-2xl">Developed in Kaduna, for the way Kaduna shops</h2>
+          <h2 className="h2 max-w-2xl">Developed for every day shopping experience</h2>
           <p className="lede">
             Totely was built in Kaduna to make shopping from open markets, supermarkets and restaurants as easy as sending a
             WhatsApp message. A local shopper buys your items, checks quality and sends photos, and a rider brings them to your door.
@@ -195,7 +195,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="wrap flex flex-col gap-3 py-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
-          <p>© {year} Totely, a product of Barterverse Technologies Ltd. WhatsApp is a trademark of Meta Platforms, Inc.; Totely is not affiliated with Meta.</p>
+          <p>© {year} Totely, by Barterverse Technologies Ltd. WhatsApp is a trademark of Meta Platforms, Inc.; Totely is not affiliated with Meta.</p>
           <p className="flex shrink-0 gap-5"><a className="hover:text-white" href="/privacy/">Privacy policy</a><a className="hover:text-white" href="/terms/">Terms of service</a></p>
         </div>
       </div>
