@@ -11,6 +11,13 @@ export function Areas() {
           <p className="kicker">Where we currently deliver</p>
           <h2 className="h2">Starting in Kaduna, area by area</h2>
           <p className="lede">When you say hi, Totely shows the areas we deliver to right now. New areas open as shoppers, riders and vendors join, and the ones customers ask for most open first.</p>
+          <div className="mt-6 rounded-2xl border border-line bg-white p-5">
+            <h3 className="text-lg font-bold">Shop anywhere in your city</h3>
+            <p className="mt-1 text-ink-soft">
+              Live in Kawo but prefer Central Market? Pick any open area in your city when you order. A shopper there buys
+              it and a rider brings it home. The extra delivery fee for the trip is shown before you pay.
+            </p>
+          </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={WA.start} target="_blank" rel="noopener" className="btn-wa"><WaIcon />Check my area</a>
             <a href={WA.area} target="_blank" rel="noopener" className="btn-ghost">Ask for my area</a>
@@ -38,11 +45,14 @@ function KadunaMap() {
   ];
   return (
     <figure className="rounded-2xl bg-white p-4">
-      <svg viewBox="0 0 520 360" className="w-full" role="img" aria-label="Illustrated map of Kaduna with Totely delivery areas open around Kawo, Station Market and Central Market, and more areas planned.">
+      <svg viewBox="0 0 520 360" className="w-full" role="img" aria-label="Illustrated map of Kaduna with Totely delivery areas open around Kawo, Station Market and Central Market, a dashed route showing an order shopped at Central Market and delivered in Kawo, and more areas planned.">
         <rect width="520" height="360" rx="14" fill="#F5F7FB" />
         <path d="M-10 290C90 250 140 300 220 250S360 170 420 200s90 10 110-20" fill="none" stroke="#BFD3FB" strokeWidth="18" strokeLinecap="round" />
         <path d="M60 40l60 300M20 180h480M260 20v330M380 30l-90 310" stroke="#E3E8F1" strokeWidth="6" strokeLinecap="round" />
         {soon.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r="34" fill="none" stroke="#6B7794" strokeWidth="2" strokeDasharray="5 6" />)}
+        {/* Shopped at Central Market, delivered in Kawo */}
+        <path d="M360 128Q272 46 184 84" fill="none" stroke="#2563EB" strokeWidth="3" strokeDasharray="7 7" strokeLinecap="round" />
+        <path d="M196 74l-14 11 17 4" fill="none" stroke="#2563EB" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
         {open.map((p) => (
           <g key={p.label}>
             <circle cx={p.x} cy={p.y} r="46" fill="#1E8E5A" opacity="0.14" />
@@ -124,6 +134,7 @@ const FAQS = [
   { q: 'Is Totely safe?', a: 'Payments go through a licensed partner bank and need your PIN. Your PIN and BVN are only ever typed on a secure Totely page, never in the chat, and Totely does not store your BVN. Every delivery needs your code, and every step is photographed.' },
   { q: 'I lost my phone. How do I protect my account?', a: 'Reply FREEZE in the chat, or contact Totely from any other phone and we will freeze your account. Nothing can be paid from your wallet while it is frozen.' },
   { q: 'Which areas do you cover?', a: 'We are starting in Kaduna and opening area by area. Say hi to see the current list. If yours is not there, choose “My area isn’t listed” and we will tell you when we open there.' },
+  { q: 'Can I buy from a market in another area?', a: 'Yes, anywhere we serve in your own city. Live in Kawo and want Central Market prices? Choose Central Market area when you order: a shopper there buys your items and a rider brings them to you. The extra delivery fee for the longer trip is shown in the chat before you pay. Each order is shopped in one area, and you can’t order from another city, for example Abuja from Kaduna.' },
   { q: 'Will Totely send me adverts?', a: 'Only if you say yes. We ask once; if you agree, you get deals, new stores and restaurants, and news when we open in your area, at most a couple of messages a week. Reply STOP anytime to stop them.' },
   { q: 'How do I become a vendor, shopper or rider?', a: 'Message Totely on WhatsApp and say which one, for example “I want to be a rider”. That opens an application with our team, and we contact you with the requirements for verification, usually a valid ID and a few documents, and where to send them. If something is missing, send it later and we reopen your application. Once approved, shoppers and riders use the Totely worker app and are paid weekly into their Totely wallet; vendors are settled to their bank account.' },
   { q: 'Can my business advertise on Totely?', a: 'Yes. Vendors on Totely can promote offers to customers in the areas they choose. Only customers who agreed to receive offers get them, and sponsored messages are clearly labelled. Message us on WhatsApp to ask about it.' },

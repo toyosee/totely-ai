@@ -6,7 +6,7 @@ import { JoinSteps } from './Join';
 
 const STEPS = [
   { title: 'Say hi on WhatsApp', text: 'Set up takes about two minutes: your name, delivery area and address. Your PIN goes on a secure page, never in the chat, and your Totely wallet opens with our partner bank.' },
-  { title: 'Send your list', text: 'Type it, send a voice note, or snap a handwritten list. Choose a market or store, and Totely prices every item with delivery and fees shown up front.' },
+  { title: 'Send your list', text: 'Type it, send a voice note, or snap a handwritten list. Choose a market or store, near you or in another area of your city, and Totely prices every item with delivery and fees shown up front.' },
   { title: 'Approve and pay', text: 'Tap to pay from your Totely wallet and confirm with your PIN, or pay by bank transfer to the account Totely gives you in the chat.' },
   { title: 'Watch it happen', text: 'Your shopper sends photos as they buy, checks any price change or swap with you first, a rider delivers with a code only you have, and your receipt arrives in the chat.' },
 ];
