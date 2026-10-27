@@ -15,10 +15,23 @@ export function Logo() {
   return (
     <span className="flex items-center gap-2.5">
       <LogoMark />
-      <span className="font-display text-[1.375rem] font-bold tracking-tight text-ink" style={{ fontFamily: 'var(--font-display)' }}>totely</span>
+      <span className="flex flex-col justify-center leading-none">
+        <span 
+          className="font-display text-[1.375rem] font-bold tracking-tight text-ink" 
+          style={{ fontFamily: 'var(--font-display)' }}
+        >
+          totely
+        </span>
+        <span className="text-[0.6875rem] font-medium tracking-wider text-muted/80 mt-0.5">
+          <a href="https://thebarterverse.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+            By Barterverse Tech.
+          </a>
+        </span>
+      </span>
     </span>
   );
 }
+
 
 /** WhatsApp glyph (simple, own drawing). */
 export function WaIcon({ size = 20 }: { size?: number }) {
