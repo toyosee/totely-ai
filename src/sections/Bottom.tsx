@@ -190,7 +190,7 @@ export function Footer() {
     <footer className="bg-ink text-white">
       <div className="wrap grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
-          <span className="inline-block rounded-xl bg-white px-3 py-2"><Logo /></span>
+          <span className="inline-block rounded-xl bg-white text-ink px-3 py-2"><Logo /></span>
           <p className="mt-4 max-w-xs text-white/70">Your daily needs, totally covered. Markets, supermarkets and restaurants on WhatsApp.</p>
         </div>
         <FooterCol title="Shop" links={[['How it works', '/#how'], ['What you can order', '/#order'], ['Where we deliver', '/#areas'], ['Safety', '/#safety'], ['About Totely', '/#about'], ['FAQ', '/#faq']]} />
