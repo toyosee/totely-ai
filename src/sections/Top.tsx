@@ -58,10 +58,10 @@ export function Hero() {
             <span className="size-2 rounded-full bg-palm" aria-hidden="true" />Your Daily Needs Totally Covered
           </p>
           <h1 className="mt-5 text-[2.6rem] font-extrabold leading-[1.02] sm:text-[3.5rem] xl:text-[3.9rem]">
-            Send the list.<br /><span className="lg:whitespace-nowrap">We'll do the market.</span>
+            Just say 'HI'.<br /><span className="lg:whitespace-nowrap">We'll do the market.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-ink-soft sm:text-xl">
-            Type it, voice-note it or snap a photo of it, in English, Pidgin or Hausa. A Totely shopper buys it from the
+            Send your list: Type it, voice-note it or snap a photo of it, in English, Pidgin or Hausa. A Totely shopper buys it from the
             market, supermarket or kitchen you choose, shows you photos as they go, and a rider brings it to your door.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
